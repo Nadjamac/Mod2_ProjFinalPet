@@ -25,7 +25,7 @@ class racas(db.Model):
     imagem = db.Column(db.String(255), nullable=False)
     curiosidade = db.Column(db.String(10000),nullable= False) # incluido mais uma coluna no banco de dados direcionando para o texto historias acionado pelo botao curiosidades.
 
-    def __init__(self, nome, imagem,curiosidade):
+    def __init__(self, nome, imagem,curiosidade):# definindo o construtor e o paramentro para as funções do banco de dados 
         self.nome = nome
         self.imagem = imagem
         self.curiosidade = curiosidade
