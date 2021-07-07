@@ -64,7 +64,7 @@ def index():
 @app.route("/read")
 def read_all():
     registros = racas.read_all()
-    # Chamada do método read_all da classe Filmes, que representa a tabela filmes do banco de dados.
+    # Chamada do método read_all da classe Raças, que representa a tabela filmes do banco de dados.
     registros = racas.read_all()
     return render_template("read_all.html", registros=registros)
 
