@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
-    background: rgba(39, 8, 124, 0.479);
+    background: rgba(39, 8, 124, 0.479); #alterado a cor de fundo do cabecario e da pagina
     font-family: "Montserrat", sans-serif;
     margin: 0;
     padding: 0px 0;
