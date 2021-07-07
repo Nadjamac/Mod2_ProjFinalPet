@@ -23,7 +23,7 @@ class racas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(255), nullable=False)
     imagem = db.Column(db.String(255), nullable=False)
-    curiosidade = db.Column(db.String(10000),nullable= False)
+    curiosidade = db.Column(db.String(10000),nullable= False) # incluido mais uma coluna no banco de dados direcionando para o texto historias acionado pelo botao curiosidades.
 
     def __init__(self, nome, imagem,curiosidade):
         self.nome = nome
@@ -64,7 +64,7 @@ def index():
 @app.route("/read")
 def read_all():
     registros = racas.read_all()
-    # Chamada do método read_all da classe Raças, que representa a tabela filmes do banco de dados.
+    # Chamada do método read_all da classe Raças, que representa a tabela  racas do banco de dados.
     registros = racas.read_all()
     return render_template("read_all.html", registros=registros)
 
