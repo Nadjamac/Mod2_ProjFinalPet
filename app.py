@@ -19,7 +19,7 @@ app.secret_key = "chave escondidamente"
 db = SQLAlchemy(app)
 
 
-class racas(db.Model):
+class racas(db.Model): #Classe  que define a união e funcionamento do banco de dados no programa 
     id = db.Column(db.Integer, primary_key=True)
     nome = db.Column(db.String(255), nullable=False)
     imagem = db.Column(db.String(255), nullable=False)
@@ -31,10 +31,9 @@ class racas(db.Model):
         self.curiosidade = curiosidade
     
     @staticmethod
-    def read_all():
-  
+    def read_all():  # metodo statico que retorna de forma ascendente as informacoes os id da tabela do banco de dados 
         return racas.query.order_by(racas.id.asc()).all()
-    db = SQLAlchemy(app)
+     db = SQLAlchemy(app)
 
     @staticmethod
     def read_single(id_registro):
@@ -46,17 +45,17 @@ class racas(db.Model):
     def save(self): 
         db.session.commit()
 
-    def update(self,novo_nome,novo_imagem,novo_curiosidade):
+    def update(self,novo_nome,novo_imagem,novo_curiosidade):# funcao que vai atualizar os registro recebido pelo usuario 
         self.nome = novo_nome
         self.imagem = novo_imagem
         self.curiosidade = novo_curiosidade
         self.save()
 
-    def delete(self):
+    def delete(self):   # funcao que vai apagar o registro recebido pelo usuario na pagina pelo botão excluir 
         db.session.delete(self)
         db.session.commit()   
 
-@app.route("/")
+@app.route("/")# definindo o caminho da pagina a rota que o programa deve realizar para cada funcão definida nos comandos def
 def index():
     return render_template("index.html")
 
